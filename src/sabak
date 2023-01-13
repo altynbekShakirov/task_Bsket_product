@@ -1,0 +1,592 @@
+create  table  customers(
+    id serial primary key  ,
+    first_name varchar not null ,
+    last_name varchar not null ,
+    email varchar check ( email like '%@%')not null ,
+    phone_number varchar
+);
+
+create table  basket (
+    id serial primary key  ,
+    basket_name varchar,
+    customer_id int references  customers(id)
+);
+create  table  products_basket(
+    basket_id int references  basket(id),
+    products_id int references  products(id)
+
+);
+create  table  products(
+    id serial primary key  ,
+    name varchar,
+    discription varchar,
+    price int ,
+     weight int
+);
+create table  product_info(
+    id serial primary key  ,
+     expiration_date date,
+     country varchar,
+     colour varchar,
+     product_id int references  products(id)
+);
+insert into customers (first_name, last_name, email, phone_number) values ('Kalina', 'Grancher', 'kgrancher0@bluehost.com', '+354 463 326 9120');
+insert into customers (first_name, last_name, email, phone_number) values ('Adriaens', 'Samsonsen', 'asamsonsen1@e-recht24.de', '+963 184 240 6279');
+insert into customers (first_name, last_name, email, phone_number) values ('Mildred', 'Kondrat', 'mkondrat2@kickstarter.com', '+1 404 622 8141');
+insert into customers (first_name, last_name, email, phone_number) values ('Claudelle', 'Van Arsdalen', 'cvanarsdalen3@dropbox.com', '+48 653 887 1367');
+insert into customers (first_name, last_name, email, phone_number) values ('Eleanora', 'Elkins', 'eelkins4@blogger.com', '+502 743 599 4844');
+insert into customers (first_name, last_name, email, phone_number) values ('Gabi', 'Giddens', 'ggiddens5@dyndns.org', '+86 808 759 7158');
+insert into customers (first_name, last_name, email, phone_number) values ('Leslie', 'Donner', 'ldonner6@cam.ac.uk', '+1 691 158 9356');
+insert into customers (first_name, last_name, email, phone_number) values ('Ann', 'Perazzo', 'aperazzo7@xrea.com', '+850 680 772 8410');
+insert into customers (first_name, last_name, email, phone_number) values ('Gustavus', 'Hannah', 'ghannah8@amazon.co.uk', '+353 807 118 3582');
+insert into customers (first_name, last_name, email, phone_number) values ('Lelah', 'Rosbottom', 'lrosbottom9@oracle.com', '+86 588 424 7977');
+insert into customers (first_name, last_name, email, phone_number) values ('Marlo', 'Fairhead', 'mfairheada@gravatar.com', '+7 425 348 9469');
+insert into customers (first_name, last_name, email, phone_number) values ('Lorita', 'MacRanald', 'lmacranaldb@slideshare.net', '+86 784 966 6945');
+insert into customers (first_name, last_name, email, phone_number) values ('Aguie', 'Espinazo', 'aespinazoc@yahoo.co.jp', '+86 235 781 2552');
+insert into customers (first_name, last_name, email, phone_number) values ('Kimbell', 'Du Pre', 'kdupred@imageshack.us', '+420 801 694 2914');
+insert into customers (first_name, last_name, email, phone_number) values ('Reeba', 'Pierrepoint', 'rpierrepointe@ebay.com', '+81 741 894 8227');
+insert into customers (first_name, last_name, email, phone_number) values ('Otha', 'Claypole', 'oclaypolef@liveinternet.ru', '+375 937 215 2591');
+insert into customers (first_name, last_name, email, phone_number) values ('Syd', 'Screeton', 'sscreetong@blogger.com', '+86 598 387 4375');
+insert into customers (first_name, last_name, email, phone_number) values ('Cicily', 'Orpin', 'corpinh@scientificamerican.com', '+1 504 281 4787');
+insert into customers (first_name, last_name, email, phone_number) values ('Lavinie', 'Pinhorn', 'lpinhorni@diigo.com', '+380 706 772 3737');
+insert into customers (first_name, last_name, email, phone_number) values ('Thatch', 'McKeag', 'tmckeagj@china.com.cn', '+81 157 461 3419');
+insert into customers (first_name, last_name, email, phone_number) values ('Sharl', 'Cockle', 'scocklek@bigcartel.com', '+63 889 746 9664');
+insert into customers (first_name, last_name, email, phone_number) values ('Delano', 'Robertshaw', 'drobertshawl@google.co.jp', '+86 623 187 7921');
+insert into customers (first_name, last_name, email, phone_number) values ('Sutherlan', 'Rosenbush', 'srosenbushm@ed.gov', '+66 906 181 1257');
+insert into customers (first_name, last_name, email, phone_number) values ('Anabelle', 'Sidary', 'asidaryn@dagondesign.com', '+245 730 473 0238');
+insert into customers (first_name, last_name, email, phone_number) values ('Tabina', 'Skatcher', 'tskatchero@goo.ne.jp', '+46 283 487 7602');
+insert into customers (first_name, last_name, email, phone_number) values ('Fawnia', 'Bonfield', 'fbonfieldp@tinyurl.com', '+850 422 869 7486');
+insert into customers (first_name, last_name, email, phone_number) values ('Jackquelin', 'Colclough', 'jcolcloughq@cloudflare.com', '+507 559 908 9649');
+insert into customers (first_name, last_name, email, phone_number) values ('Townsend', 'Hampshaw', 'thampshawr@ustream.tv', '+420 158 134 1585');
+insert into customers (first_name, last_name, email, phone_number) values ('Noland', 'Gallandre', 'ngallandres@va.gov', '+86 713 585 1284');
+insert into customers (first_name, last_name, email, phone_number) values ('Renaldo', 'De Normanville', 'rdenormanvillet@census.gov', '+54 589 500 8366');
+insert into customers (first_name, last_name, email, phone_number) values ('Norma', 'Giacometti', 'ngiacomettiu@wp.com', '+351 866 401 5814');
+insert into customers (first_name, last_name, email, phone_number) values ('Ernestus', 'Gresley', 'egresleyv@webnode.com', '+237 195 924 2937');
+insert into customers (first_name, last_name, email, phone_number) values ('Sibeal', 'Hindrich', 'shindrichw@toplist.cz', '+52 438 618 8906');
+insert into customers (first_name, last_name, email, phone_number) values ('Arabela', 'Gascoyen', 'agascoyenx@fotki.com', '+48 136 879 2398');
+insert into customers (first_name, last_name, email, phone_number) values ('Reena', 'Waywell', 'rwaywelly@youtube.com', '+963 993 645 2578');
+insert into customers (first_name, last_name, email, phone_number) values ('Rani', 'Suller', 'rsullerz@imgur.com', '+55 125 543 1829');
+insert into customers (first_name, last_name, email, phone_number) values ('Forester', 'Tupman', 'ftupman10@domainmarket.com', '+886 431 107 9430');
+insert into customers (first_name, last_name, email, phone_number) values ('Guillema', 'Glen', 'gglen11@51.la', '+386 741 417 7996');
+insert into customers (first_name, last_name, email, phone_number) values ('Yvonne', 'Gilffillan', 'ygilffillan12@smh.com.au', '+86 122 424 0321');
+insert into customers (first_name, last_name, email, phone_number) values ('Dredi', 'MacKilroe', 'dmackilroe13@typepad.com', '+420 524 100 6122');
+insert into customers (first_name, last_name, email, phone_number) values ('Bengt', 'Gearing', 'bgearing14@opensource.org', '+27 736 350 8541');
+insert into customers (first_name, last_name, email, phone_number) values ('Fanni', 'Astin', 'fastin15@youku.com', '+55 883 957 7977');
+insert into customers (first_name, last_name, email, phone_number) values ('Gus', 'Skpsey', 'gskpsey16@cnet.com', '+504 651 280 4411');
+insert into customers (first_name, last_name, email, phone_number) values ('Filberte', 'Bratley', 'fbratley17@youku.com', '+970 510 905 0983');
+insert into customers (first_name, last_name, email, phone_number) values ('Candis', 'Alejandro', 'calejandro18@printfriendly.com', '+7 787 131 4251');
+insert into customers (first_name, last_name, email, phone_number) values ('Chlo', 'Schwandermann', 'cschwandermann19@boston.com', '+351 982 518 3618');
+insert into customers (first_name, last_name, email, phone_number) values ('Mora', 'Hayen', 'mhayen1a@g.co', '+84 691 840 1756');
+insert into customers (first_name, last_name, email, phone_number) values ('Torey', 'Summerlie', 'tsummerlie1b@tiny.cc', '+55 644 333 6267');
+insert into customers (first_name, last_name, email, phone_number) values ('Katinka', 'Jackways', 'kjackways1c@redcross.org', '+55 628 565 0533');
+insert into customers (first_name, last_name, email, phone_number) values ('Baxy', 'Pordal', 'bpordal1d@ow.ly', '+63 709 658 0229');
+insert into customers (first_name, last_name, email, phone_number) values ('Clemente', 'Reyburn', 'creyburn1e@posterous.com', '+84 809 908 7172');
+insert into customers (first_name, last_name, email, phone_number) values ('Melisse', 'Willerstone', 'mwillerstone1f@hhs.gov', '+57 448 670 2392');
+insert into customers (first_name, last_name, email, phone_number) values ('Alica', 'Littlejohn', 'alittlejohn1g@tinypic.com', '+48 760 512 5199');
+insert into customers (first_name, last_name, email, phone_number) values ('Arleta', 'Symper', 'asymper1h@patch.com', '+216 760 108 9590');
+insert into customers (first_name, last_name, email, phone_number) values ('Aile', 'Rizzello', 'arizzello1i@slate.com', '+242 271 632 3124');
+insert into customers (first_name, last_name, email, phone_number) values ('Nels', 'Klimschak', 'nklimschak1j@360.cn', '+504 252 484 2120');
+insert into customers (first_name, last_name, email, phone_number) values ('Evyn', 'Eldin', 'eeldin1k@guardian.co.uk', '+62 672 973 5939');
+insert into customers (first_name, last_name, email, phone_number) values ('Aloise', 'Renoden', 'arenoden1l@amazonaws.com', '+86 584 331 2052');
+insert into customers (first_name, last_name, email, phone_number) values ('Kenn', 'Beckett', 'kbeckett1m@indiatimes.com', '+62 163 616 8707');
+insert into customers (first_name, last_name, email, phone_number) values ('Devinne', 'Tenaunt', 'dtenaunt1n@friendfeed.com', '+45 417 970 0954');
+insert into customers (first_name, last_name, email, phone_number) values ('Lucille', 'Jirousek', 'ljirousek1o@tripod.com', '+1 405 716 6682');
+insert into customers (first_name, last_name, email, phone_number) values ('Aridatha', 'Medgwick', 'amedgwick1p@mysql.com', '+7 921 464 7711');
+insert into customers (first_name, last_name, email, phone_number) values ('Saidee', 'Rodenburg', 'srodenburg1q@example.com', '+54 385 296 8702');
+insert into customers (first_name, last_name, email, phone_number) values ('Mathilda', 'Kinmond', 'mkinmond1r@1688.com', '+86 776 227 7464');
+insert into customers (first_name, last_name, email, phone_number) values ('Sile', 'Churm', 'schurm1s@feedburner.com', '+48 112 467 9513');
+insert into customers (first_name, last_name, email, phone_number) values ('Lazare', 'Michel', 'lmichel1t@paypal.com', '+1 916 277 0451');
+insert into customers (first_name, last_name, email, phone_number) values ('Christoph', 'Kareman', 'ckareman1u@eepurl.com', '+98 982 183 7520');
+insert into customers (first_name, last_name, email, phone_number) values ('Baxie', 'Whitford', 'bwhitford1v@behance.net', '+387 814 622 8337');
+insert into customers (first_name, last_name, email, phone_number) values ('Kristen', 'Jeune', 'kjeune1w@bing.com', '+227 600 402 6661');
+insert into customers (first_name, last_name, email, phone_number) values ('Garret', 'Zupone', 'gzupone1x@bing.com', '+507 582 425 0520');
+insert into customers (first_name, last_name, email, phone_number) values ('Helen', 'Pudsey', 'hpudsey1y@bloglines.com', '+7 655 282 7772');
+insert into customers (first_name, last_name, email, phone_number) values ('Garv', 'Golda', 'ggolda1z@wisc.edu', '+48 708 206 1550');
+insert into customers (first_name, last_name, email, phone_number) values ('Ciel', 'Suttle', 'csuttle20@weebly.com', '+86 195 384 8561');
+insert into customers (first_name, last_name, email, phone_number) values ('Nels', 'Boykett', 'nboykett21@aboutads.info', '+86 704 159 5324');
+insert into customers (first_name, last_name, email, phone_number) values ('Lari', 'Ganders', 'lganders22@virginia.edu', '+63 141 856 6693');
+insert into customers (first_name, last_name, email, phone_number) values ('Ann', 'Fredson', 'afredson23@skype.com', '+237 881 946 7322');
+insert into customers (first_name, last_name, email, phone_number) values ('Chance', 'Neathway', 'cneathway24@last.fm', '+27 469 310 9081');
+insert into customers (first_name, last_name, email, phone_number) values ('Moises', 'Gloy', 'mgloy25@eepurl.com', '+86 824 833 8750');
+insert into customers (first_name, last_name, email, phone_number) values ('Fee', 'D''Antuoni', 'fdantuoni26@alexa.com', '+51 708 900 8070');
+insert into customers (first_name, last_name, email, phone_number) values ('Jard', 'Keitch', 'jkeitch27@globo.com', '+7 934 430 0283');
+insert into customers (first_name, last_name, email, phone_number) values ('Denney', 'Murrigans', 'dmurrigans28@wiley.com', '+57 136 357 7010');
+insert into customers (first_name, last_name, email, phone_number) values ('Regen', 'Champagne', 'rchampagne29@berkeley.edu', '+62 352 447 6767');
+insert into customers (first_name, last_name, email, phone_number) values ('Chester', 'Spillett', 'cspillett2a@hc360.com', '+86 183 577 8215');
+insert into customers (first_name, last_name, email, phone_number) values ('Eberto', 'Francioli', 'efrancioli2b@clickbank.net', '+54 819 893 2938');
+insert into customers (first_name, last_name, email, phone_number) values ('Danni', 'Gibbin', 'dgibbin2c@archive.org', '+351 896 144 1092');
+insert into customers (first_name, last_name, email, phone_number) values ('Nil', 'Lamblin', 'nlamblin2d@senate.gov', '+86 834 661 2508');
+insert into customers (first_name, last_name, email, phone_number) values ('Wain', 'Sollis', 'wsollis2e@google.cn', '+62 769 922 6439');
+insert into customers (first_name, last_name, email, phone_number) values ('Cheryl', 'Maestro', 'cmaestro2f@wikia.com', '+33 113 607 8447');
+insert into customers (first_name, last_name, email, phone_number) values ('Mignon', 'Housego', 'mhousego2g@discuz.net', '+86 496 631 9962');
+insert into customers (first_name, last_name, email, phone_number) values ('Chickie', 'Mangan', 'cmangan2h@home.pl', '+380 461 993 7128');
+insert into customers (first_name, last_name, email, phone_number) values ('Lilli', 'Atcheson', 'latcheson2i@illinois.edu', '+86 612 627 0418');
+insert into customers (first_name, last_name, email, phone_number) values ('Fredelia', 'Nester', 'fnester2j@creativecommons.org', '+54 738 299 5587');
+insert into customers (first_name, last_name, email, phone_number) values ('Monah', 'Anniwell', 'manniwell2k@archive.org', '+86 138 156 2148');
+insert into customers (first_name, last_name, email, phone_number) values ('Collie', 'O''Crowley', 'cocrowley2l@cargocollective.com', '+55 792 652 2665');
+insert into customers (first_name, last_name, email, phone_number) values ('Nessy', 'Eatock', 'neatock2m@yellowpages.com', '+86 904 649 1053');
+insert into customers (first_name, last_name, email, phone_number) values ('Mercy', 'Brodie', 'mbrodie2n@census.gov', '+66 828 469 9663');
+insert into customers (first_name, last_name, email, phone_number) values ('Amity', 'Milkins', 'amilkins2o@vistaprint.com', '+57 462 496 2499');
+insert into customers (first_name, last_name, email, phone_number) values ('Evania', 'Wybourne', 'ewybourne2p@chron.com', '+86 903 971 3590');
+insert into customers (first_name, last_name, email, phone_number) values ('Elmira', 'Labrow', 'elabrow2q@omniture.com', '+1 851 106 7333');
+insert into products (name, discription, weight, price) values ('Island Oasis - Lemonade', 'feugiat et eros', 44, 4840);
+insert into products (name, discription, weight, price) values ('Savory', 'sollicitudin vitae consectetuer', 24, 4581);
+insert into products (name, discription, weight, price) values ('Filter - Coffee', 'sapien in sapien', 49, 2048);
+insert into products (name, discription, weight, price) values ('Clam - Cherrystone', 'porttitor id consequat in consequat', 48, 2761);
+insert into products (name, discription, weight, price) values ('Ice Cream - Turtles Stick Bar', 'eleifend luctus ultricies eu nibh', 1, 2274);
+insert into products (name, discription, weight, price) values ('Sobe - Green Tea', 'suspendisse ornare consequat lectus', 23, 4914);
+insert into products (name, discription, weight, price) values ('Liquid Aminios Acid - Braggs', 'tempus vel pede', 43, 2299);
+insert into products (name, discription, weight, price) values ('Cape Capensis - Fillet', 'duis aliquam convallis nunc', 41, 842);
+insert into products (name, discription, weight, price) values ('Pear - Prickly', 'velit id pretium', 32, 1834);
+insert into products (name, discription, weight, price) values ('Juice - Tomato, 10 Oz', 'sem praesent id massa', 17, 2251);
+insert into products (name, discription, weight, price) values ('Creme De Banane - Marie', 'risus praesent lectus vestibulum quam', 9, 3222);
+insert into products (name, discription, weight, price) values ('Leeks - Baby, White', 'ipsum primis in faucibus orci', 41, 3566);
+insert into products (name, discription, weight, price) values ('Foam Cup 6 Oz', 'diam erat fermentum justo', 45, 3450);
+insert into products (name, discription, weight, price) values ('Wine - Rubyport', 'varius integer ac leo pellentesque', 19, 4875);
+insert into products (name, discription, weight, price) values ('Appetizer - Mango Chevre', 'vestibulum rutrum rutrum neque aenean', 18, 1416);
+insert into products (name, discription, weight, price) values ('Salt And Pepper Mix - White', 'purus aliquet at feugiat', 12, 3388);
+insert into products (name, discription, weight, price) values ('Beets - Golden', 'lacus at velit vivamus vel', 11, 2203);
+insert into products (name, discription, weight, price) values ('Bouillion - Fish', 'ut rhoncus aliquet', 12, 4186);
+insert into products (name, discription, weight, price) values ('Rum - Spiced, Captain Morgan', 'eget orci vehicula', 9, 2629);
+insert into products (name, discription, weight, price) values ('Cheese - Brie,danish', 'mus vivamus vestibulum sagittis', 15, 1419);
+insert into products (name, discription, weight, price) values ('Veal - Heart', 'sagittis dui vel nisl', 19, 4752);
+insert into products (name, discription, weight, price) values ('Mushroom - Crimini', 'amet consectetuer adipiscing elit proin', 40, 706);
+insert into products (name, discription, weight, price) values ('Beef - Eye Of Round', 'eu orci mauris lacinia', 13, 1846);
+insert into products (name, discription, weight, price) values ('Teriyaki Sauce', 'vehicula consequat morbi a ipsum', 13, 3786);
+insert into products (name, discription, weight, price) values ('Wine - Dubouef Macon - Villages', 'leo maecenas pulvinar', 29, 4452);
+insert into products (name, discription, weight, price) values ('Nectarines', 'elementum in hac', 8, 975);
+insert into products (name, discription, weight, price) values ('Bandage - Flexible Neon', 'purus sit amet', 43, 4806);
+insert into products (name, discription, weight, price) values ('Cinnamon Buns Sticky', 'nunc nisl duis', 1, 2559);
+insert into products (name, discription, weight, price) values ('Sage Derby', 'in faucibus orci', 3, 4228);
+insert into products (name, discription, weight, price) values ('Lamb - Rack', 'ligula pellentesque ultrices', 15, 1406);
+insert into products (name, discription, weight, price) values ('Irish Cream - Butterscotch', 'ac diam cras pellentesque volutpat', 41, 874);
+insert into products (name, discription, weight, price) values ('Nestea - Iced Tea', 'velit nec nisi', 19, 3291);
+insert into products (name, discription, weight, price) values ('Milk - Chocolate 250 Ml', 'imperdiet sapien urna pretium nisl', 36, 1229);
+insert into products (name, discription, weight, price) values ('Salmon - Canned', 'consequat metus sapien ut', 6, 3538);
+insert into products (name, discription, weight, price) values ('Chevril', 'ridiculus mus etiam', 6, 4339);
+insert into products (name, discription, weight, price) values ('Cookies - Oreo, 4 Pack', 'diam neque vestibulum eget vulputate', 13, 1987);
+insert into products (name, discription, weight, price) values ('Higashimaru Usukuchi Soy', 'sapien dignissim vestibulum', 6, 4572);
+insert into products (name, discription, weight, price) values ('Cheese - Stilton', 'ipsum praesent blandit', 30, 1835);
+insert into products (name, discription, weight, price) values ('Tortillas - Flour, 12', 'nulla elit ac', 38, 1091);
+insert into products (name, discription, weight, price) values ('Juice Peach Nectar', 'et tempus semper est quam', 42, 1016);
+insert into products (name, discription, weight, price) values ('Olives - Kalamata', 'porta volutpat erat', 36, 535);
+insert into products (name, discription, weight, price) values ('Stock - Chicken, White', 'lorem integer tincidunt ante', 7, 4332);
+insert into products (name, discription, weight, price) values ('Chicken - Diced, Cooked', 'ut rhoncus aliquet', 22, 3418);
+insert into products (name, discription, weight, price) values ('Loquat', 'bibendum morbi non quam', 42, 1181);
+insert into products (name, discription, weight, price) values ('Sea Bass - Fillets', 'ut ultrices vel augue', 29, 1948);
+insert into products (name, discription, weight, price) values ('Flour - Fast / Rapid', 'purus sit amet', 7, 842);
+insert into products (name, discription, weight, price) values ('Salt - Rock, Course', 'amet diam in', 9, 827);
+insert into products (name, discription, weight, price) values ('Soup - Tomato Mush. Florentine', 'quam pede lobortis ligula', 31, 1787);
+insert into products (name, discription, weight, price) values ('Appetizer - Smoked Salmon / Dill', 'sociis natoque penatibus et', 37, 3612);
+insert into products (name, discription, weight, price) values ('Slt - Individual Portions', 'ante ipsum primis in', 14, 3784);
+insert into products (name, discription, weight, price) values ('Pasta - Lasagna, Dry', 'eros elementum pellentesque quisque', 13, 2078);
+insert into products (name, discription, weight, price) values ('Trueblue - Blueberry', 'dolor quis odio consequat', 28, 3511);
+insert into products (name, discription, weight, price) values ('Beer - Creemore', 'tempor turpis nec', 31, 2332);
+insert into products (name, discription, weight, price) values ('Cookies - Amaretto', 'non lectus aliquam sit', 1, 837);
+insert into products (name, discription, weight, price) values ('Pork - Hock And Feet Attached', 'tristique est et', 50, 1023);
+insert into products (name, discription, weight, price) values ('Pimento - Canned', 'consequat ut nulla sed', 28, 3491);
+insert into products (name, discription, weight, price) values ('Ham - Black Forest', 'sit amet consectetuer adipiscing', 10, 4546);
+insert into products (name, discription, weight, price) values ('Jerusalem Artichoke', 'id ornare imperdiet', 10, 3070);
+insert into products (name, discription, weight, price) values ('Heavy Duty Dust Pan', 'quam pede lobortis', 18, 1985);
+insert into products (name, discription, weight, price) values ('Soup - Campbells, Chix Gumbo', 'aenean fermentum donec ut mauris', 49, 2191);
+insert into products (name, discription, weight, price) values ('Bread - Bistro Sour', 'rhoncus aliquet pulvinar sed', 43, 1186);
+insert into products (name, discription, weight, price) values ('Rabbit - Frozen', 'dictumst aliquam augue quam sollicitudin', 36, 4660);
+insert into products (name, discription, weight, price) values ('Spring Roll Veg Mini', 'velit id pretium', 2, 3349);
+insert into products (name, discription, weight, price) values ('Bread - Roll, Italian', 'mi in porttitor pede justo', 5, 3007);
+insert into products (name, discription, weight, price) values ('Vinegar - Red Wine', 'sit amet consectetuer adipiscing elit', 23, 1036);
+insert into products (name, discription, weight, price) values ('Nescafe - Frothy French Vanilla', 'quam turpis adipiscing lorem', 10, 3879);
+insert into products (name, discription, weight, price) values ('Coffee Swiss Choc Almond', 'vel pede morbi porttitor lorem', 23, 2414);
+insert into products (name, discription, weight, price) values ('Beer - Blue Light', 'in blandit ultrices enim lorem', 36, 717);
+insert into products (name, discription, weight, price) values ('Cookies - Englishbay Wht', 'a pede posuere nonummy', 33, 1139);
+insert into products (name, discription, weight, price) values ('Peas Snow', 'nisl nunc nisl', 34, 572);
+insert into products (name, discription, weight, price) values ('Wanton Wrap', 'ligula suspendisse ornare consequat lectus', 34, 3892);
+insert into products (name, discription, weight, price) values ('Fond - Chocolate', 'erat curabitur gravida nisi at', 41, 2420);
+insert into products (name, discription, weight, price) values ('Carbonated Water - White Grape', 'ut erat id mauris vulputate', 49, 1569);
+insert into products (name, discription, weight, price) values ('Wine - Sauvignon Blanc Oyster', 'posuere nonummy integer non', 28, 2667);
+insert into products (name, discription, weight, price) values ('Phyllo Dough', 'enim in tempor', 3, 4686);
+insert into products (name, discription, weight, price) values ('Chicken - Breast, 5 - 7 Oz', 'volutpat eleifend donec', 17, 3308);
+insert into products (name, discription, weight, price) values ('Soup - Campbells - Chicken Noodle', 'diam nam tristique tortor', 31, 1398);
+insert into products (name, discription, weight, price) values ('Cups 10oz Trans', 'eget elit sodales scelerisque mauris', 6, 2302);
+insert into products (name, discription, weight, price) values ('Sauce Tomato Pouch', 'porta volutpat quam pede lobortis', 21, 4241);
+insert into products (name, discription, weight, price) values ('Lime Cordial - Roses', 'odio condimentum id luctus', 29, 2582);
+insert into products (name, discription, weight, price) values ('Cookie Chocolate Chip With', 'volutpat quam pede lobortis', 35, 3693);
+insert into products (name, discription, weight, price) values ('Cheese - St. Paulin', 'pellentesque viverra pede', 45, 2633);
+insert into products (name, discription, weight, price) values ('Kellogs All Bran Bars', 'viverra diam vitae', 2, 1862);
+insert into products (name, discription, weight, price) values ('Cranberry Foccacia', 'pellentesque at nulla', 46, 4637);
+insert into products (name, discription, weight, price) values ('Pork Ham Prager', 'quis turpis eget elit', 32, 639);
+insert into products (name, discription, weight, price) values ('Celery', 'mauris lacinia sapien', 31, 3137);
+insert into products (name, discription, weight, price) values ('Bag Clear 10 Lb', 'lacus purus aliquet', 22, 2238);
+insert into products (name, discription, weight, price) values ('Soy Protein', 'et ultrices posuere cubilia curae', 16, 2237);
+insert into products (name, discription, weight, price) values ('Compound - Passion Fruit', 'congue risus semper porta volutpat', 39, 3591);
+insert into products (name, discription, weight, price) values ('Asparagus - White, Fresh', 'nascetur ridiculus mus', 46, 3867);
+insert into products (name, discription, weight, price) values ('Sprouts - China Rose', 'pulvinar nulla pede ullamcorper augue', 38, 4660);
+insert into products (name, discription, weight, price) values ('Chinese Foods - Cantonese', 'luctus ultricies eu nibh quisque', 46, 3002);
+insert into products (name, discription, weight, price) values ('Bouillion - Fish', 'integer pede justo', 22, 3580);
+insert into products (name, discription, weight, price) values ('Appetizer - Mushroom Tart', 'ipsum aliquam non mauris', 25, 3169);
+insert into products (name, discription, weight, price) values ('Potatoes - Instant, Mashed', 'aliquam augue quam', 35, 1613);
+insert into products (name, discription, weight, price) values ('Shallots', 'quisque id justo', 43, 793);
+insert into products (name, discription, weight, price) values ('Wine - Pinot Noir Latour', 'leo odio condimentum id luctus', 2, 4090);
+insert into products (name, discription, weight, price) values ('Cheese - Asiago', 'sapien non mi', 16, 3661);
+insert into products (name, discription, weight, price) values ('Lid - 16 Oz And 32 Oz', 'sollicitudin ut suscipit a feugiat', 41, 2938);
+insert into products (name, discription, weight, price) values ('Soup - Campbells Beef Stew', 'ut suscipit a', 22, 3879);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-10-18', 'United Kingdom', 'Aquamarine', 1);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-08-02', 'Thailand', 'Crimson', 2);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-03-29', 'China', 'Crimson', 3);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-02-23', 'Philippines', 'Blue', 4);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-02-14', 'Uganda', 'Puce', 5);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-05-23', 'Brazil', 'Indigo', 6);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-03-09', 'Indonesia', 'Puce', 7);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-10-27', 'Indonesia', 'Puce', 8);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-10-17', 'Malaysia', 'Yellow', 9);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-03-08', 'Kiribati', 'Indigo', 10);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-03-31', 'Sweden', 'Mauv', 11);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-05-03', 'Indonesia', 'Turquoise', 12);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-12-08', 'Indonesia', 'Orange', 13);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-12-08', 'Sweden', 'Yellow', 14);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-28', 'France', 'Orange', 15);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-01', 'Armenia', 'Red', 16);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-08-21', 'China', 'Orange', 17);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-10-13', 'China', 'Crimson', 18);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-12-06', 'Ukraine', 'Purple', 19);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-09-13', 'China', 'Red', 20);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-10-30', 'China', 'Red', 21);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-02-14', 'China', 'Red', 22);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-09-25', 'China', 'Orange', 23);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-06-08', 'Yemen', 'Khaki', 24);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-05-18', 'Poland', 'Purple', 25);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-05-12', 'Argentina', 'Blue', 26);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-10-28', 'Poland', 'Maroon', 27);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-25', 'Morocco', 'Violet', 28);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-02-10', 'China', 'Yellow', 29);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-07-30', 'Philippines', 'Purple', 30);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-17', 'Greece', 'Orange', 31);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-02-03', 'Argentina', 'Crimson', 32);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-04-08', 'Indonesia', 'Blue', 33);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-02-21', 'Russia', 'Mauv', 34);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-05-28', 'Philippines', 'Goldenrod', 35);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-12-05', 'China', 'Puce', 36);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-04-26', 'China', 'Khaki', 37);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-05-12', 'Russia', 'Purple', 38);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-09-19', 'China', 'Yellow', 39);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-03-03', 'Uzbekistan', 'Puce', 40);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-10', 'China', 'Red', 41);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-01-24', 'China', 'Blue', 42);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-07-25', 'Brazil', 'Puce', 43);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-18', 'Philippines', 'Purple', 44);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-09-04', 'China', 'Mauv', 45);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-02-28', 'China', 'Orange', 46);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-09-15', 'Brazil', 'Maroon', 47);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-09-06', 'Portugal', 'Turquoise', 48);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-09-03', 'China', 'Green', 49);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-03-28', 'Philippines', 'Fuscia', 50);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-09-07', 'Thailand', 'Teal', 51);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-02-11', 'Russia', 'Green', 52);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-11-16', 'Rwanda', 'Aquamarine', 53);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-12-26', 'Belarus', 'Yellow', 54);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-09-08', 'Malta', 'Mauv', 55);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-06-22', 'French Polynesia', 'Khaki', 56);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-12-24', 'China', 'Pink', 57);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-06-22', 'Ukraine', 'Violet', 58);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-08-24', 'France', 'Mauv', 59);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-02-02', 'Portugal', 'Pink', 60);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-04-04', 'Austria', 'Aquamarine', 61);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-08-26', 'China', 'Purple', 62);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-01-15', 'France', 'Crimson', 63);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-06-14', 'Indonesia', 'Purple', 64);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-08-13', 'Vietnam', 'Crimson', 65);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-08-16', 'Brazil', 'Turquoise', 66);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-11-26', 'Brazil', 'Yellow', 67);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-09-12', 'Indonesia', 'Fuscia', 68);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-04-30', 'Pakistan', 'Teal', 69);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-03-15', 'Thailand', 'Violet', 70);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-04-19', 'Indonesia', 'Goldenrod', 71);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-07-22', 'Philippines', 'Aquamarine', 72);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-05-30', 'Peru', 'Indigo', 73);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-06-10', 'Sweden', 'Green', 74);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-05-31', 'Russia', 'Purple', 75);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-25', 'Honduras', 'Goldenrod', 76);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-16', 'United States', 'Goldenrod', 77);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-09-14', 'Iran', 'Yellow', 78);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-01-21', 'Taiwan', 'Fuscia', 79);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-01-13', 'Tanzania', 'Blue', 80);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-07-22', 'Russia', 'Blue', 81);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-06-22', 'Indonesia', 'Indigo', 82);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-02-08', 'Indonesia', 'Pink', 83);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-05-10', 'Afghanistan', 'Blue', 84);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-05-09', 'Japan', 'Violet', 85);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-05-29', 'Colombia', 'Indigo', 86);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-10', 'Kazakhstan', 'Teal', 87);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-06-03', 'Indonesia', 'Red', 88);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-11-23', 'China', 'Teal', 89);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-06-29', 'Argentina', 'Turquoise', 90);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-11-06', 'Brazil', 'Maroon', 91);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-03-13', 'Indonesia', 'Khaki', 92);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-01-18', 'Paraguay', 'Maroon', 93);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-09-01', 'Peru', 'Turquoise', 94);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-03-29', 'Philippines', 'Fuscia', 95);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-06-03', 'Indonesia', 'Turquoise', 96);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-02-11', 'China', 'Orange', 97);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-08-09', 'Indonesia', 'Orange', 98);
+insert into product_info (expiration_date, country, colour, product_id) values ('2022-05-19', 'China', 'Crimson', 99);
+insert into product_info (expiration_date, country, colour, product_id) values ('2023-09-09', 'Netherlands', 'Turquoise', 100);
+
+insert into basket (basket_name, customer_id) values ('dfawcus0', 1);
+insert into basket (basket_name, customer_id) values ('mfoord1', 2);
+insert into basket (basket_name, customer_id) values ('kcroke2', 3);
+insert into basket (basket_name, customer_id) values ('ebaiyle3', 4);
+insert into basket (basket_name, customer_id) values ('vnazareth4', 5);
+insert into basket (basket_name, customer_id) values ('hgrundey5', 6);
+insert into basket (basket_name, customer_id) values ('rgubbins6', 7);
+insert into basket (basket_name, customer_id) values ('pcapps7', 8);
+insert into basket (basket_name, customer_id) values ('egerger8', 9);
+insert into basket (basket_name, customer_id) values ('cwhelband9', 10);
+insert into basket (basket_name, customer_id) values ('avasyushkhina', 11);
+insert into basket (basket_name, customer_id) values ('aklosab', 12);
+insert into basket (basket_name, customer_id) values ('cberginc', 13);
+insert into basket (basket_name, customer_id) values ('cblindd', 14);
+insert into basket (basket_name, customer_id) values ('etripeane', 15);
+insert into basket (basket_name, customer_id) values ('dlinnemanf', 16);
+insert into basket (basket_name, customer_id) values ('ndumbarg', 17);
+insert into basket (basket_name, customer_id) values ('ecantoh', 18);
+insert into basket (basket_name, customer_id) values ('hmineti', 19);
+insert into basket (basket_name, customer_id) values ('dgekej', 20);
+insert into basket (basket_name, customer_id) values ('kmiguelk', 21);
+insert into basket (basket_name, customer_id) values ('ymustinl', 22);
+insert into basket (basket_name, customer_id) values ('cfurmengerm', 23);
+insert into basket (basket_name, customer_id) values ('vranscomben', 24);
+insert into basket (basket_name, customer_id) values ('ywyborno', 25);
+insert into basket (basket_name, customer_id) values ('mkockp', 26);
+insert into basket (basket_name, customer_id) values ('rhukeq', 27);
+insert into basket (basket_name, customer_id) values ('wpettor', 28);
+insert into basket (basket_name, customer_id) values ('treinbachs', 29);
+insert into basket (basket_name, customer_id) values ('gillstont', 30);
+insert into basket (basket_name, customer_id) values ('carmittu', 31);
+insert into basket (basket_name, customer_id) values ('kkindredv', 32);
+insert into basket (basket_name, customer_id) values ('bconnachanw', 33);
+insert into basket (basket_name, customer_id) values ('bbartolomeox', 34);
+insert into basket (basket_name, customer_id) values ('watkinsy', 35);
+insert into basket (basket_name, customer_id) values ('ckinsetz', 36);
+insert into basket (basket_name, customer_id) values ('amckernan10', 37);
+insert into basket (basket_name, customer_id) values ('ogerold11', 38);
+insert into basket (basket_name, customer_id) values ('cclimson12', 39);
+insert into basket (basket_name, customer_id) values ('mleynagh13', 40);
+insert into basket (basket_name, customer_id) values ('bwykes14', 41);
+insert into basket (basket_name, customer_id) values ('wmcclinton15', 42);
+insert into basket (basket_name, customer_id) values ('fverni16', 43);
+insert into basket (basket_name, customer_id) values ('cmcgrotty17', 44);
+insert into basket (basket_name, customer_id) values ('bstutte18', 45);
+insert into basket (basket_name, customer_id) values ('ltrevan19', 46);
+insert into basket (basket_name, customer_id) values ('mjermey1a', 47);
+insert into basket (basket_name, customer_id) values ('rdemkowicz1b', 48);
+insert into basket (basket_name, customer_id) values ('dferonet1c', 49);
+insert into basket (basket_name, customer_id) values ('ssutworth1d', 50);
+insert into basket (basket_name, customer_id) values ('easling1e', 51);
+insert into basket (basket_name, customer_id) values ('tmeggison1f', 52);
+insert into basket (basket_name, customer_id) values ('bbrehault1g', 53);
+insert into basket (basket_name, customer_id) values ('gtandey1h', 54);
+insert into basket (basket_name, customer_id) values ('cmcmakin1i', 55);
+insert into basket (basket_name, customer_id) values ('scosgreave1j', 56);
+insert into basket (basket_name, customer_id) values ('nivashintsov1k', 57);
+insert into basket (basket_name, customer_id) values ('aweber1l', 58);
+insert into basket (basket_name, customer_id) values ('jcurrington1m', 59);
+insert into basket (basket_name, customer_id) values ('gcritchell1n', 60);
+insert into basket (basket_name, customer_id) values ('rspringer1o', 61);
+insert into basket (basket_name, customer_id) values ('hcollingworth1p', 62);
+insert into basket (basket_name, customer_id) values ('asillis1q', 63);
+insert into basket (basket_name, customer_id) values ('gchaffyn1r', 64);
+insert into basket (basket_name, customer_id) values ('balderman1s', 65);
+insert into basket (basket_name, customer_id) values ('efaux1t', 66);
+insert into basket (basket_name, customer_id) values ('mcatmull1u', 67);
+insert into basket (basket_name, customer_id) values ('amonte1v', 68);
+insert into basket (basket_name, customer_id) values ('jglentz1w', 69);
+insert into basket (basket_name, customer_id) values ('galdwich1x', 70);
+insert into basket (basket_name, customer_id) values ('fgaucher1y', 71);
+insert into basket (basket_name, customer_id) values ('cbernetti1z', 72);
+insert into basket (basket_name, customer_id) values ('bable20', 73);
+insert into basket (basket_name, customer_id) values ('cknell21', 74);
+insert into basket (basket_name, customer_id) values ('gjosse22', 75);
+insert into basket (basket_name, customer_id) values ('clente23', 76);
+insert into basket (basket_name, customer_id) values ('thurdle24', 77);
+insert into basket (basket_name, customer_id) values ('fgolda25', 78);
+insert into basket (basket_name, customer_id) values ('bkloisner26', 79);
+insert into basket (basket_name, customer_id) values ('lpenburton27', 80);
+insert into basket (basket_name, customer_id) values ('yvondra28', 81);
+insert into basket (basket_name, customer_id) values ('dmacguiness29', 82);
+insert into basket (basket_name, customer_id) values ('jawton2a', 83);
+insert into basket (basket_name, customer_id) values ('bbroinlich2b', 84);
+insert into basket (basket_name, customer_id) values ('hcyster2c', 85);
+insert into basket (basket_name, customer_id) values ('reckery2d', 86);
+insert into basket (basket_name, customer_id) values ('cwortley2e', 87);
+insert into basket (basket_name, customer_id) values ('cbezemer2f', 88);
+insert into basket (basket_name, customer_id) values ('uthatcher2g', 89);
+insert into basket (basket_name, customer_id) values ('zferminger2h', 90);
+insert into basket (basket_name, customer_id) values ('jmorin2i', 91);
+insert into basket (basket_name, customer_id) values ('arapson2j', 92);
+insert into basket (basket_name, customer_id) values ('wlyttle2k', 93);
+insert into basket (basket_name, customer_id) values ('gcooper2l', 94);
+insert into basket (basket_name, customer_id) values ('cbowman2m', 95);
+insert into basket (basket_name, customer_id) values ('esquier2n', 96);
+insert into basket (basket_name, customer_id) values ('mbarkworth2o', 97);
+insert into basket (basket_name, customer_id) values ('aluckes2p', 98);
+insert into basket (basket_name, customer_id) values ('dalbin2q', 99);
+insert into basket (basket_name, customer_id) values ('mgoodman2r', 100);
+insert into products_basket (basket_id, products_id) values (1, 1);
+insert into products_basket (basket_id, products_id) values (2, 2);
+insert into products_basket (basket_id, products_id) values (3, 3);
+insert into products_basket (basket_id, products_id) values (4, 4);
+insert into products_basket (basket_id, products_id) values (5, 5);
+insert into products_basket (basket_id, products_id) values (6, 6);
+insert into products_basket (basket_id, products_id) values (7, 7);
+insert into products_basket (basket_id, products_id) values (8, 8);
+insert into products_basket (basket_id, products_id) values (9, 9);
+insert into products_basket (basket_id, products_id) values (10, 10);
+insert into products_basket (basket_id, products_id) values (11, 11);
+insert into products_basket (basket_id, products_id) values (12, 12);
+insert into products_basket (basket_id, products_id) values (13, 13);
+insert into products_basket (basket_id, products_id) values (14, 14);
+insert into products_basket (basket_id, products_id) values (15, 15);
+insert into products_basket (basket_id, products_id) values (16, 16);
+insert into products_basket (basket_id, products_id) values (17, 17);
+insert into products_basket (basket_id, products_id) values (18, 18);
+insert into products_basket (basket_id, products_id) values (19, 19);
+insert into products_basket (basket_id, products_id) values (20, 20);
+insert into products_basket (basket_id, products_id) values (21, 21);
+insert into products_basket (basket_id, products_id) values (22, 22);
+insert into products_basket (basket_id, products_id) values (23, 23);
+insert into products_basket (basket_id, products_id) values (24, 24);
+insert into products_basket (basket_id, products_id) values (25, 25);
+insert into products_basket (basket_id, products_id) values (26, 26);
+insert into products_basket (basket_id, products_id) values (27, 27);
+insert into products_basket (basket_id, products_id) values (28, 28);
+insert into products_basket (basket_id, products_id) values (29, 29);
+insert into products_basket (basket_id, products_id) values (30, 30);
+insert into products_basket (basket_id, products_id) values (31, 31);
+insert into products_basket (basket_id, products_id) values (32, 32);
+insert into products_basket (basket_id, products_id) values (33, 33);
+insert into products_basket (basket_id, products_id) values (34, 34);
+insert into products_basket (basket_id, products_id) values (35, 35);
+insert into products_basket (basket_id, products_id) values (36, 36);
+insert into products_basket (basket_id, products_id) values (37, 37);
+insert into products_basket (basket_id, products_id) values (38, 38);
+insert into products_basket (basket_id, products_id) values (39, 39);
+insert into products_basket (basket_id, products_id) values (40, 40);
+insert into products_basket (basket_id, products_id) values (41, 41);
+insert into products_basket (basket_id, products_id) values (42, 42);
+insert into products_basket (basket_id, products_id) values (43, 43);
+insert into products_basket (basket_id, products_id) values (44, 44);
+insert into products_basket (basket_id, products_id) values (45, 45);
+insert into products_basket (basket_id, products_id) values (46, 46);
+insert into products_basket (basket_id, products_id) values (47, 47);
+insert into products_basket (basket_id, products_id) values (48, 48);
+insert into products_basket (basket_id, products_id) values (49, 49);
+insert into products_basket (basket_id, products_id) values (50, 50);
+insert into products_basket (basket_id, products_id) values (51, 51);
+insert into products_basket (basket_id, products_id) values (52, 52);
+insert into products_basket (basket_id, products_id) values (53, 53);
+insert into products_basket (basket_id, products_id) values (54, 54);
+insert into products_basket (basket_id, products_id) values (55, 55);
+insert into products_basket (basket_id, products_id) values (56, 56);
+insert into products_basket (basket_id, products_id) values (57, 57);
+insert into products_basket (basket_id, products_id) values (58, 58);
+insert into products_basket (basket_id, products_id) values (59, 59);
+insert into products_basket (basket_id, products_id) values (60, 60);
+insert into products_basket (basket_id, products_id) values (61, 61);
+insert into products_basket (basket_id, products_id) values (62, 62);
+insert into products_basket (basket_id, products_id) values (63, 63);
+insert into products_basket (basket_id, products_id) values (64, 64);
+insert into products_basket (basket_id, products_id) values (65, 65);
+insert into products_basket (basket_id, products_id) values (66, 66);
+insert into products_basket (basket_id, products_id) values (67, 67);
+insert into products_basket (basket_id, products_id) values (68, 68);
+insert into products_basket (basket_id, products_id) values (69, 69);
+insert into products_basket (basket_id, products_id) values (70, 70);
+insert into products_basket (basket_id, products_id) values (71, 71);
+insert into products_basket (basket_id, products_id) values (72, 72);
+insert into products_basket (basket_id, products_id) values (73, 73);
+insert into products_basket (basket_id, products_id) values (74, 74);
+insert into products_basket (basket_id, products_id) values (75, 75);
+insert into products_basket (basket_id, products_id) values (76, 76);
+insert into products_basket (basket_id, products_id) values (77, 77);
+insert into products_basket (basket_id, products_id) values (78, 78);
+insert into products_basket (basket_id, products_id) values (79, 79);
+insert into products_basket (basket_id, products_id) values (80, 80);
+insert into products_basket (basket_id, products_id) values (81, 81);
+insert into products_basket (basket_id, products_id) values (82, 82);
+insert into products_basket (basket_id, products_id) values (83, 83);
+insert into products_basket (basket_id, products_id) values (84, 84);
+insert into products_basket (basket_id, products_id) values (85, 85);
+insert into products_basket (basket_id, products_id) values (86, 86);
+insert into products_basket (basket_id, products_id) values (87, 87);
+insert into products_basket (basket_id, products_id) values (88, 88);
+insert into products_basket (basket_id, products_id) values (89, 89);
+insert into products_basket (basket_id, products_id) values (90, 90);
+insert into products_basket (basket_id, products_id) values (91, 91);
+insert into products_basket (basket_id, products_id) values (92, 92);
+insert into products_basket (basket_id, products_id) values (93, 93);
+insert into products_basket (basket_id, products_id) values (94, 94);
+insert into products_basket (basket_id, products_id) values (95, 95);
+insert into products_basket (basket_id, products_id) values (96, 96);
+insert into products_basket (basket_id, products_id) values (97, 97);
+insert into products_basket (basket_id, products_id) values (98, 98);
+insert into products_basket (basket_id, products_id) values (99, 99);
+insert into products_basket (basket_id, products_id) values (100, 100);
+
+--1. Баардык продукталарды(Products) жана информацияларды чыгар.
+select * from products join product_info pi on products.id = pi.product_id;
+--2. Информациясы бар болгон продукталарды гана чыгар.
+select  * from  product_info join products p on p.id = product_info.product_id;
+-- 3. Информациясы жок(null) болгон продукталарды чыгар.
+select  * from product_info join products p on p.id =  null;
+-- 4. Баардык продукталардын атын жана срогун чыгар.
+select  * from  products full join product_info pi on products.id = pi.product_id;
+-- 5. Баардык продукталарды жана анын мамлекеттери "М" менен башталган шаарларын чыгар.
+select  * from product_info full join products p on p.id = product_info.product_id where  country like 'M%';
+-- 6. Баардык кардардын(Customers) аттарын жана кардарга тийешелуу карзинанын(Basket_терин) аттарын сорттоп чыгар.(asc,desc)
+select  *from  customers full join basket b on customers.id = b.customer_id  order by basket_name;
+select  *from  customers full join basket b on customers.id = b.customer_id  order by basket_name desc ;
+-- 7. Кардардын аты жана кардардын продуктулары чыксын.
+select first_name,name from customers join basket b on customers.id = b.customer_id join basket b2 on customers.id = b2.customer_id join products_basket pb on b2.id = pb.basket_id join products p on p.id = pb.products_id;
+-- 8. Кардардын аты, кардар алган продуктун аты, баасы, салмагы чыксын.
+select  first_name,name,price,weight from  customers join basket b on customers.id = b.customer_id join basket b2 on customers.id = b2.customer_id join products_basket pb on b2.id = pb.basket_id join products p on p.id = pb.products_id;
+-- 9. Бир кардар эки окшош продукт алган болсо, кардардын аты,
+--     кардар алган продукталарынын аты уникалдуу болуп баасы жана салмагы кошулуп чыгар.
+select  first_name,name,price,weight from  customers join basket b on customers.id = b.customer_id
+    join  basket b2 on customers.id = b2.customer_id
+    join  products_basket pb on b2.id = pb.basket_id
+    join  products  p on p.id = pb.products_id    ;
+-- 10.Бир өлкөдө чыккан продукталдын баарын чыгар.
+select  p.country from  products  join product_info pi on products.id = pi.product_id
+    join product_info p on products.id = p.product_id
+    join products_basket pb on products.id = pb.products_id
+    join basket b on b.id = pb.basket_id join customers c on c.id = b.customer_id where  pi.country like '%China'
+;
+-- 11.Кардарлардын баарын жана алган продукталарынын баасынын суммасын тегеректеп (округлить) чыгар.
+select  first_name ,sum(avg(price))from customers
+join basket b on customers.id = b.customer_id
+    join customers c on c.id = b.customer_id
+    join basket b2 on customers.id = b2.customer_id
+    join products_basket pb on b2.id = pb.basket_id join products_basket p on b.id = p.basket_id join products p2 on p2.id = p.products_id join product_info pi on p2.id = pi.product_id
+
+-- 12."2021" ден "2023" кө чейинки сроктогу продукталардын атын жана срокторун чыгар.
+select  name ,expiration_date from products join product_info pi on products.id = pi.product_id where  expiration_date between  date'1-1-2021'and date'1-1-2023';
+-- 13.Срогу "2022" болгон продукталардын шаарын , продукталардын атын жана баасын чыгар бирок баалары 0 болуп калсын.
+select  expiration_date ,name ,price=0 from products join product_info pi on products.id = pi.product_id where  expiration_date between date '2022-01-01'and date '2022-12-31';
+-- 14.Баардык кардарлардын продукталарынын сумассын чыгар.
+select  sum(price) from  customers join basket b on customers.id = b.customer_id
+    join basket b2 on customers.id = b2.customer_id
+    join products_basket pb on b2.id = pb.basket_id join products p on p.id = pb.products_id ;
+-- 15.Кардардын аты жана ал сатып алган продуктунун аты, тусу чыксын.
+select first_name, colour from  customers join basket b on customers.id = b.customer_id
+    join basket b2 on customers.id = b2.customer_id
+    join products_basket pb on b2.id = pb.basket_id
+    join products p on p.id = pb.products_id
+    join product_info pi on p.id = pi.product_id ;
+-- 16.Баардык продуктулардын салмактарын чыгар.
+select  sum(weight) from products;
+-- 17.Кардарлардын email_дары "com" менен буткон кардарлардын аттары, корзинасынын аты чыксын.
+select  last_name,basket_name,email from customers  join basket b on customers.id = b.customer_id where email like '%com';
+-- 18.Продуклардын атын, кыскача маалыматын(description), кардардын атын чыгар качан кардарлардын номери жок(null) болсо.
+select  discription,last_name from customers join basket b on customers.id = b.customer_id join basket b2 on customers.id = b2.customer_id join products_basket pb on b2.id = pb.basket_id join products p on p.id = pb.products_id where  phone_number = null;
+-- 19.Бардык продуктунун тустору жана тустору окшош продукталары чыксын.
+select  colour from product_info where colour
+-- 20.Баардык продукталардын мамлекти окшош болгон продукталардын атын жана анын кардарларын атын чыгар.
